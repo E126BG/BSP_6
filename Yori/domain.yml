@@ -1,0 +1,82 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- next_POI
+- greet
+- goodbye
+- search_POI
+- search_POI_and_location
+- thanks
+- search_location
+- search_museum
+- affirm
+- deny
+- bot_challenge
+- exhibition_timing
+- get_time
+- more_info
+- user_understood
+- inform
+- search_exhibition
+- understood
+- restart
+entities:
+- POI
+- location
+slots:
+  place:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: location
+  PointOfInterest:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: POI
+responses:
+  utter_greet:
+  - text: Hi, I'm Nova! You can interact with me and ask me anything, for now I'm a really basic bot, thanks for making me better by interacting with me!
+  utter_greet1:
+  - text: My purpose is to help you find cultural events in the luxembourgish country. Anything from a good restaurant in Differdange to the next museum you'll check out in Luxembourg city!
+  utter_exhibition_test:
+  - text: I understood that you're looking for an exhibition
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot made by Eliott Bonte as a student project and powered by Rasa.
+  utter_great:
+  - text: Great!
+  utter_ask_location:
+  - text: In which city?
+  - text: To find the nearest {PointOfInterest}, I need your current location.
+  utter_ask_POI:
+  - text: What would you like to find in {place}?
+  utter_ask_feedback:
+  - text: How was your experience?
+  - text: Fill the survey https://forms.gle/yqGT5qdRRiY3rdy66
+  utter_restart:
+  - text: Interaction is restarting
+actions:
+- action_correct_user_input
+- action_exhibition_location
+- action_exhibition_search
+- action_give_time
+- action_tell_more
+- action_show_location
+- action_next_POI
+- action_set_images_preference
+- action_tell_POI_location
+- action_tell_museum_location
+- utter_ask_POI
+- utter_ask_feedback
+- utter_ask_location
+- utter_goodbye
+- utter_greet
+- utter_greet1

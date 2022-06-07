@@ -1,0 +1,220 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moien
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - greetings lil chatbot
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: search_POI
+  examples: |
+    - i'm looking for a [museum](POI)
+    - find me a [restaurant](POI)
+    - i'd like to go to a [museum](POI) today
+    - heard of any good [museum](POI) around here?
+    - do you know a [restaurant](POI) in the vicinity?
+    - find me a [museum](POI)
+    - a [museum](POI)
+    - [museum](POI)
+    - i'm looking for a [restaurant](POI)
+    - find a [museum](POI)
+    - find some cool [museum](POI)
+    - do you know some good [museum](POI) by here
+    - any historical [museum](POI)
+    - find a [restaurant](POI) in [wiltz](location)
+- intent: search_location
+  examples: |
+    - i'm looking for something to do in [berlin](location)
+    - an activity in [paris](location)
+    - i would like to do stuff in [paris](location)
+    - anything to do in [berlin](location) currently?
+    - in [berlin](location)
+    - [differdange](location)
+    - i'm in [paris](location)
+    - my current location is [beaufort](location)
+    - find a [restaurant](POI) in [differdange](location)
+- intent: search_POI_and_location
+  examples: |
+    - i'm looking for a [museum](POI) in [paris](location)
+    - find a [museum](POI) in [amsterdam](location)
+    - find me a [restaurant](POI) in [berlin](location)
+    - [restaurant](POI) at [london](location)
+    - find a [restaurant](POI) in [luxembourg city](location)
+    - find a [museum](POI) in [luxembourg city](location)
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: exhibition_timing
+  examples: |
+    - do you know about art?
+    - is there any exhibition?
+    - it want to see art
+    - is there any ongoing performance currently?
+- intent: get_time
+  examples: |
+    - do you have the time
+    - what time is it?
+    - what's the current hour
+    - please give me the time
+- intent: understood
+  examples: |
+    - got it
+    - understood
+    - ok
+    - i understand
+    - great
+    - let's go
+- intent: more_info
+  examples: |
+    - can I know more?
+    - tell me more
+    - what can you do?
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - ty
+    - thanc u
+- intent: restart
+  examples: |
+    - restart
+    - please restart
+    - start over
+- intent: next_POI
+  examples: |
+    - next
+- lookup: location
+  examples: |
+    - luxembourg city
+    - esch
+    - luxembourg
+    - esch-sur-alzette
+    - esch sur alzette
+    - dudelange
+    - differdange
+    - schifflange
+    - bettembourg
+    - petange
+    - ettelbruck
+    - diekirch
+    - strassen
+    - bertrange
+    - belvaux
+    - mamer
+    - soleuvre
+    - echternach
+    - wiltz
+    - bascharage
+    - rodange
+    - oberkorn
+    - rumelange
+    - kayl
+    - howald
+    - grevenmacher
+    - bereldange
+    - mersch
+    - mondercange
+    - niederkorn
+    - remich
+    - bridel
+    - tetange
+    - mondorf-les-bains
+    - mondorf les bains
+    - sandweiler
+    - bissen
+    - sanem
+    - lamadelaine
+    - junglinster
+    - wasserbillig
+    - steinfort
+    - helmsange
+    - hesperange
+    - leudelange
+    - steinsel
+    - itzig
+    - clemency
+    - colmar-berg
+    - lintgen
+    - kehlen
+    - heisforf
+    - senningerberg
+    - eischen
+    - vianden
+    - niederanwen
+    - bergem
+    - hautcharage
+    - mertzig
+    - gonderange
+    - beaufort
+    - troisvierges
+    - larochette
+    - schieren
+    - alzingen
+    - capellen
+    - frisange
+    - fentange
+    - dalheim
+    - crauthem
+    - consdorf
+    - warken
+    - moutfort
+    - mertert
+    - redange
+    - niederfeulen
+    - contern
+    - bettendorf
+    - koerich
+    - clervaux
+    - hobscheid
+    - schrassig
+    - mullendorf
+    - paris
+    - amsterdam
+    - london
+    - berlin
+- lookup: POI
+  examples: |
+    - restaurant
+    - museum

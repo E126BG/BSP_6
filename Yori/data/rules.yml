@@ -1,0 +1,64 @@
+version: "3.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Give the user POI and location when asked
+  steps:
+  - intent: search_POI_and_location
+  - action: action_tell_POI_location
+
+#- rule: Give the user POI when asked
+#  steps:
+#  - intent: search_POI
+#  - action: utter_ask_location
+#
+#- rule: Give the user location when asked
+#  steps:
+#  - intent: search_location
+#  #  - action: action_correct_user_input
+#  - action: utter_ask_POI
+
+#- rule: Restart interaction anytime the says 'restart'
+#  steps:
+#  - intent: restart
+#  - action: utter_restart
+#  - checkpoint: check_restart
+
+#- rule : Search for POI in location when asked
+#  steps:
+#  - intent: search_POI
+#    entities:
+#    - location: rouen
+#    - POI: museum
+#  - slot_was_set:
+#    - place: rouen
+#    - PointOfInterest : museum
+#  - action: action_tell_POI_location
+
+#- rule : Ask for location when given POI
+#  steps:
+#  - intent: search_POI
+#    entities:
+#    - POI: museum
+#  - slot_was_set:
+#    - PointOfInterest: museum
+#  - action: utter_ask_location
+
+#- rule : Ask for POI when given location
+#  steps:
+#    - intent: search_place
+#      entities:
+#      - location: berlin
+#    - slot_was_set:
+#      - place: berlin
+#    - action: utter_ask_POI

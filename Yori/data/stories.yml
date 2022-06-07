@@ -1,0 +1,272 @@
+version: "3.0"
+
+stories:
+
+
+- story: beginning of interaction
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_greet1
+    - checkpoint: check_greet
+
+- story: happy path 1
+  steps:
+  - checkpoint: check_greet
+  - intent: search_POI_and_location
+    entities:
+    - location: rouen
+    - POI: museum
+  - slot_was_set:
+    - place: rouen
+    - PointOfInterest : museum
+#  - action: action_correct_user_input
+  - action: action_tell_POI_location
+  - intent: thanks
+  - action: utter_goodbye
+  - action: utter_ask_feedback
+  - checkpoint: check_end
+#  - checkpoint: check_greet
+
+
+#    NEW STORY
+
+- story: happy path 2
+  steps:
+  - checkpoint: check_greet
+  - intent: search_POI
+    entities:
+    - POI: museum
+  - slot_was_set:
+    - PointOfInterest: museum
+  - action: utter_ask_location
+  - intent: search_location
+#  - intent: inform
+    entities:
+    - location: berlin
+  - slot_was_set:
+    - place: berlin
+#  - action: action_correct_user_input
+  - action: action_tell_POI_location
+  - intent: thanks
+  - action: utter_goodbye
+  - action: utter_ask_feedback
+  - checkpoint: check_end
+#  - checkpoint: check_greet
+
+- story: happy path 3
+  steps:
+  - checkpoint: check_greet
+  - intent: search_location
+    entities:
+    - location: berlin
+  - slot_was_set:
+    - place: berlin
+  - action: utter_ask_POI
+#  - intent: inform
+  - intent: search_POI
+    entities:
+    - POI: berlin
+  - slot_was_set:
+    - PointOfInterest: berlin
+#  - action: action_correct_user_input
+  - action: action_tell_POI_location
+  - intent: thanks
+  - action: utter_goodbye
+  - action: utter_ask_feedback
+  - checkpoint: check_end
+#  - checkpoint: check_greet
+
+
+- story : end of conversation
+  steps:
+  - checkpoint: check_end
+  - intent: restart
+  - action: utter_restart
+#  - checkpoint: check_greet
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_location
+    entities:
+    - location: diekirch
+  - slot_was_set:
+    - place: diekirch
+  - action: utter_ask_POI
+  - intent: search_POI
+    entities:
+    - POI: museum
+  - slot_was_set:
+    - PointOfInterest: museum
+  - action: action_tell_POI_location
+  - intent: search_POI_and_location
+    entities:
+    - POI: restaurant
+    - location: luxembourg city
+  - action: action_tell_POI_location
+  - intent: search_location
+    entities:
+    - location: beaufort
+  - slot_was_set:
+    - place: beaufort
+  - action: utter_ask_POI
+  - intent: search_POI
+    entities:
+    - POI: restaurant
+  - slot_was_set:
+    - PointOfInterest: restaurant
+  - action: action_tell_POI_location
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_location
+    entities:
+    - location: beaufort
+  - slot_was_set:
+    - place: beaufort
+  - action: utter_ask_POI
+  - intent: search_POI
+    entities:
+    - POI: museum
+  - slot_was_set:
+    - PointOfInterest: museum
+  - action: action_tell_POI_location
+  - intent: search_POI_and_location
+    entities:
+    - location: luxembourg city
+    - POI: museum
+  - slot_was_set:
+    - place: luxembourg city
+  - action: action_tell_POI_location
+  - intent: search_location
+    entities:
+    - location: diekirch
+  - slot_was_set:
+    - place: diekirch
+  - action: utter_ask_POI
+  - intent: search_POI
+    entities:
+    - POI: restaurant
+  - slot_was_set:
+    - PointOfInterest: restaurant
+  - action: action_tell_POI_location
+  - intent: search_POI
+    entities:
+    - POI: museum
+  - slot_was_set:
+    - PointOfInterest: museum
+  - action: utter_ask_location
+  - intent: search_location
+    entities:
+    - location: diekirch
+  - intent: thanks
+  - action: utter_goodbye
+  - action: utter_ask_feedback
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_location
+    entities:
+    - location: differdange
+    - POI: restaurant
+  - slot_was_set:
+    - place: differdange
+  - slot_was_set:
+    - PointOfInterest: restaurant
+  - action: action_tell_POI_location
+  - intent: thanks
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_location
+    entities:
+    - location: differdange
+    - POI: restaurant
+  - slot_was_set:
+    - place: differdange
+  - slot_was_set:
+    - PointOfInterest: restaurant
+  - action: action_tell_POI_location
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Smile-Italian Street Food
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Fischer Differdange
+  - intent: thanks
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_POI_and_location
+    entities:
+    - location: luxembourg city
+    - POI: museum
+  - slot_was_set:
+    - place: luxembourg city
+  - slot_was_set:
+    - PointOfInterest: museum
+  - action: action_tell_POI_location
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Luxembourg National Museum of Natural History
+  - intent: thanks
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet1
+  - intent: search_POI
+    entities:
+    - location: wiltz
+    - POI: restaurant
+  - slot_was_set:
+    - place: wiltz
+  - slot_was_set:
+    - PointOfInterest: restaurant
+  - action: action_tell_POI_location
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Chez Xu
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Panos Q8 LU Pommerloch 2
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Bakes Wiltz
+  - intent: next_POI
+  - action: action_next_POI
+  - slot_was_set:
+    - PointOfInterest: Café de la poste Le Carré
+  - intent: next_POI
+  - intent: goodbye
+  - action: utter_goodbye
