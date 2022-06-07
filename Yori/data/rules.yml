@@ -17,6 +17,24 @@ rules:
   - intent: search_POI_and_location
   - action: action_tell_POI_location
 
+
+
+
+- rule: Next
+  steps:
+  - intent: next_POI
+  - action: action_next_POI
+
+- rule: Show maps
+  steps:
+  - intent: show_maps
+  - action: action_show_location
+
+- rule: More info
+  steps:
+  - intent: more_info
+  - action: action_tell_more
+
 #- rule: Give the user POI when asked
 #  steps:
 #  - intent: search_POI

@@ -3,7 +3,6 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- next_POI
 - greet
 - goodbye
 - search_POI
@@ -16,11 +15,13 @@ intents:
 - bot_challenge
 - exhibition_timing
 - get_time
-- more_info
 - user_understood
 - inform
 - search_exhibition
 - understood
+- next_POI
+- more_info
+- show_maps
 - restart
 entities:
 - POI

@@ -108,6 +108,7 @@ nlu:
     - let's go
 - intent: more_info
   examples: |
+    - more info
     - can I know more?
     - tell me more
     - what can you do?
@@ -125,6 +126,12 @@ nlu:
 - intent: next_POI
   examples: |
     - next
+- intent: show_maps
+  examples: |
+    - show maps
+
+
+
 - lookup: location
   examples: |
     - luxembourg city

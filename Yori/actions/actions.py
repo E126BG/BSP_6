@@ -146,8 +146,11 @@ class ActionTellPOILocation(Action):
         msg = f"There are {nbOfPOIs} places that correspond to your querry"
 
         msg1 = f"Here is the top rated {current_POI} of {current_location}: {listOfPOIs[0]}"
+
+        msg2 = f"Type next to see the next POI, show maps to show its location or more info to see the tags of the POI"
         dispatcher.utter_message(text=msg)
         dispatcher.utter_message(text=msg1)
+        dispatcher.utter_message(text=msg2)
 
         return []
 
@@ -164,7 +167,9 @@ class ActionNextPOI(Action):
         currentIndex, current_POI = next_POI.next_POI(listOfPOIs, currentIndex)
 
         msg = f"Next POI: {current_POI}, index : {currentIndex}"
+        msg1 = f"Type next to see the next POI, show maps to show its location or more info to see the tags of the POI"
         dispatcher.utter_message(msg)
+        dispatcher.utter_message(msg1)
 
         return [SlotSet("PointOfInterest", current_POI)]
 
